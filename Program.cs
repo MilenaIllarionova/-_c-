@@ -1,4 +1,4 @@
-// Задача 64: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1. Выполнить с помощью рекурсии.
+﻿/* Задача 64: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1. Выполнить с помощью рекурсии.
 
 internal class Program
 {
@@ -29,6 +29,34 @@ using System;
 
 class Program
 {
+    static void Main(string[] args)
+    {
+        Console.Write("Введите значение M: ");
+        int m = int.Parse(Console.ReadLine());
+
+        Console.Write("Введите значение N: ");
+        int n = int.Parse(Console.ReadLine());
+
+        int sum = 0;
+        for (int i = m; i <= n; i++)
+        {
+            sum += i;
+        }
+
+        Console.WriteLine("Сумма натуральных элементов в промежутке от {0} до {1} равна {2}", m, n, sum);
+
+        Console.ReadKey();
+    }
+}
+
+
+/*Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
+m = 2, n = 3 -> A(m,n) = 9
+m = 3, n = 2 -> A(m,n) = 29
+using System;
+
+class Program
+{
     static int Ackermann(int m, int n)
     {
         if (m == 0)
@@ -41,18 +69,14 @@ class Program
 
     static void Main(string[] args)
     {
-        int m = 2, n = 3;
-        Console.WriteLine("A({0},{1}) = {2}", m, n, Ackermann(m, n));
+        Random rand = new Random();
+        int m = rand.Next(0, 10);
+        int n = rand.Next(0, 10);
 
-        m = 3; n = 2;
-        Console.WriteLine("A({0},{1}) = {2}", m, n, Ackermann(m, n));
+        Console.WriteLine("Вычисление функции Аккермана для m = {0} и n = {1}", m, n);
+        Console.WriteLine("Результат: {0}", Ackermann(m, n));
 
         Console.ReadKey();
     }
 }
-
-
-Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
-m = 2, n = 3 -> A(m,n) = 9
-m = 3, n = 2 -> A(m,n) = 29
 */
